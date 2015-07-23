@@ -86,10 +86,9 @@ public class IQDYarnDriver extends RDFDatabaseDriver<Long> {
 			loadRecipe(query, recipeURL);
 		Collection<Tuple> tuples = iqdClient.checkQuery(recipes.get(query), getPatternName(query));
 		ArrayList<IQDYarnMatch> matches = new ArrayList<IQDYarnMatch>();
-		
-		// XXX collect matches from production tuple set
+
 		for(Tuple tuple : tuples) {
-			matches.add(IQDYarnMatch.createMatch(query, tuples));
+			matches.add(IQDYarnMatch.createMatch(query, tuple));
 		}
 		return matches;
 	}

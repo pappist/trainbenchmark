@@ -19,8 +19,7 @@ public class IQDYarnTransformationRepairSwitchSensor extends IQDYarnTransformati
 
 	@Override
 	public void rhs(Collection<IQDYarnSwitchSensorMatch> matches) throws Exception {
-		
-		// XXX
+
 		HashMap<String, ChangeSet> changes = new HashMap<String, ChangeSet>();
 		Tuple switchTuple = new Tuple(iqdDriver.getNewVertexId());
 		HashSet<Tuple> tupleSet = new HashSet<Tuple>();

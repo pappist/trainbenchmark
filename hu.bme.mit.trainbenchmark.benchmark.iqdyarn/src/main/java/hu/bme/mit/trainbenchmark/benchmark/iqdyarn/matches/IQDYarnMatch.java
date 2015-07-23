@@ -3,20 +3,20 @@ package hu.bme.mit.trainbenchmark.benchmark.iqdyarn.matches;
 import hu.bme.mit.incqueryd.engine.rete.dataunits.Tuple;
 import hu.bme.mit.trainbenchmark.constants.Query;
 
-import java.util.Collection;
-
 public abstract class IQDYarnMatch {
 	
-	protected Collection<Tuple> tuples;
+	protected Tuple tuple;
 	
-	public IQDYarnMatch(Collection<Tuple> tuples) {
-		this.tuples = tuples;
+	public IQDYarnMatch(Tuple tuple) {
+		this.tuple = tuple;
 	}
 	
-	public static IQDYarnMatch createMatch(Query query, Collection<Tuple> tuples) {
+	public static IQDYarnMatch createMatch(Query query, Tuple tuple) {
 		switch(query) {
 			case SWITCHSENSOR:
-				return new IQDYarnSwitchSensorMatch(tuples);
+				return new IQDYarnSwitchSensorMatch(tuple);
+			case ROUTESENSOR:
+				return new IQDYarnRouteSensorMatch(tuple);
 			default:
 				throw new UnsupportedOperationException("Currently only " + Query.SWITCHSENSOR + " pattern supported!");
 		}
