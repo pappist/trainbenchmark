@@ -9,6 +9,7 @@ import hu.bme.mit.trainbenchmark.benchmark.iqdyarn.transformations.IQDYarnTransf
 import hu.bme.mit.trainbenchmark.benchmark.rdf.RDFBenchmarkConfig;
 
 import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.util.Comparator;
 
 public class IQDYarnBenchmarkCase extends AbstractBenchmarkCase<IQDYarnMatch, Long>{
@@ -17,7 +18,7 @@ public class IQDYarnBenchmarkCase extends AbstractBenchmarkCase<IQDYarnMatch, Lo
 	protected RDFBenchmarkConfig rbc;
 	
 	@Override
-	protected void init() throws MalformedURLException {
+	protected void init() throws MalformedURLException, URISyntaxException {
 		this.rbc = (RDFBenchmarkConfig) bc;
 
 		driver = iqdDriver = new IQDYarnDriver();
