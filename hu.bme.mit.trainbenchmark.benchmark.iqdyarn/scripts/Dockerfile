@@ -29,5 +29,6 @@ RUN chown root:root /usr/local/trainbenchmark/runtime/run_benchmark.sh
 RUN chmod 700 /usr/local/trainbenchmark/runtime/run_benchmark.sh
 
 ADD iqdyarn-tb.tar.gz /usr/local/trainbenchmark/runtime/
+ADD models.tar.gz /usr/local/trainbenchmark/models
 
 EXPOSE 22
